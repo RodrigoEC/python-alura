@@ -1,0 +1,1 @@
+from modulo01.jogo_adivinhacao import *
