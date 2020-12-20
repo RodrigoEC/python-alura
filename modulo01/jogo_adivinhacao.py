@@ -1,10 +1,12 @@
+import random
+
 print("++++++++++++++++++++++++++++++++")
 print("Bem vindo ao jogo de adivinhação")
 print("++++++++++++++++++++++++++++++++")
 print()
 
 
-n_secreto = 42
+n_secreto = random.randint(1, 101)
 n_chances = 10
 
 saida = 'Acabaram as tentativas! O número secreto era >> 42 <<.'
@@ -18,7 +20,7 @@ for rodada in range(1, n_chances + 1):
         continue
 
     if chute == n_secreto:
-        saida = f'Você acertou e ainda sobraram {n_chances} tentativas! O número secreto era >> 42 <<'
+        saida = f'Você acertou e ainda sobraram {n_chances - rodada} tentativas! O número secreto era >> {n_secreto} <<'
         break
 
     elif chute < n_secreto:
