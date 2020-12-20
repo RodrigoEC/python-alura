@@ -5,11 +5,18 @@ print("Bem vindo ao jogo de adivinhação")
 print("++++++++++++++++++++++++++++++++")
 print()
 
+dict_niveis = {
+    'facil': 10,
+    'medio': 5,
+    'dificil': 3
+}
 
+nivel = input('Defina o nível (facil, medio ou dificil): ')
+
+n_chances = dict_niveis[nivel]
 n_secreto = random.randint(1, 101)
-n_chances = 10
 
-saida = 'Acabaram as tentativas! O número secreto era >> 42 <<.'
+saida = f'Acabaram as tentativas! O número secreto era >> {n_secreto} <<.'
 
 for rodada in range(1, n_chances + 1):
     print(f'rodada {rodada} de {n_chances}')
